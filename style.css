@@ -20,3 +20,9 @@ body {
 	background-color: white;
 	color: #333;
 }
+
+.vystup {
+	background-color: #fff;
+	display: inline-block;
+	margin-top: 1rem;
+}
