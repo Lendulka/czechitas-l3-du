@@ -1,25 +1,55 @@
 // tady je místo pro náš program
 
-let jmeno = prompt("Jaké je Tvoje jméno?");
-let prijmeni = prompt("Jaké je Tvoje příjmení?");
-let rokNaroz = Number(prompt("Napiš rok narození", "RRRR"));
+// firstName and surname
 
-const aktualRok = 2023;
-
-function spoctiVek() {
-    let vek = (aktualRok - rokNaroz);
-    let vystupProgramu = document.querySelector(".vystupProgramu");
-    vystupProgramu.innerHTML = jmeno + " " + prijmeni + " " + vek;
+let firstName = prompt("What´s your name?").trim()
+while (firstName === "") {
+    alert("That's not a valid name :(")
+    firstName = prompt("What's your name?")
 }
 
-let barva = prompt("Jaká je Tvoje oblíbená barva?", "in English");
-
-function zmenBarvu() {
-    let vystup = document.querySelector(".vystup");
-    vystup.style.backgroundColor = barva;
+let surname = prompt("What´s your surname?").trim()
+while (surname === "") {
+    alert("That's not a valid surname :(")
+    surname = prompt("What's your surname?")
 }
 
-spoctiVek()
-zmenBarvu()
+// calculate age
+
+let yearBirth = prompt("What year were you born?", "YYYY").trim()
+let currentYear = new Date().getFullYear()
+
+while (yearBirth === "" || yearBirth === " " || isNaN(yearBirth) || yearBirth.length !== 4 ||
+    !(Number(yearBirth) >= 1910 && Number(yearBirth) <= currentYear)) {
+    alert("That's not a valid year of birth :(")
+    yearBirth = prompt("What year were you born?")
+}
+
+let outputProgramElm = document.querySelector(".outputProgram")
+
+function calculateAge() {
+    let age = (currentYear - Number(yearBirth))
+    outputProgramElm.innerHTML = "Your name is: " + firstName.toUpperCase() + " " + surname.toUpperCase() +
+        ". Your age is: " + age + "."
+}
+
+calculateAge()
+
+// change backgroundColor
+
+let color = prompt("What is your favorite color?")
+
+while (!color.match(/^(#[a-f0-9]{6}|black|green|silver|gray|olive|white|yellow|maroon|navy|red|blue|purple|teal|fuchsia|aqua|orange|brown|gold|grey|pink)$/i)) {
+    alert("Your color has to be ONE WORD and in ENGLISH")
+    color = prompt("What is your favorite color?")
+}
+
+function changeColor() {
+    outputProgramElm.style.backgroundColor = color
+}
+
+changeColor()
+
+
 
 

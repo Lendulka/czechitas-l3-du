@@ -21,7 +21,15 @@ body {
 	color: #333;
 }
 
-.vystup {
+h1 {
+	color: rgb(16, 16, 223);
+}
+
+.output {
 	display: inline-block;
-	margin-top: 1rem;
+	margin-top: 1.5rem;
+}
+
+.outputProgram {
+	padding: 1rem;
 }
