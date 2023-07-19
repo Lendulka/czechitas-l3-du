@@ -32,4 +32,6 @@ h1 {
 
 .outputProgram {
 	padding: 1rem;
+	display: flex;
+	flex-wrap: wrap;
 }
