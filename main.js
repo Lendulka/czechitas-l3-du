@@ -25,12 +25,14 @@ while (yearBirth === "" || yearBirth === " " || isNaN(yearBirth) || yearBirth.le
     yearBirth = prompt("What year were you born?")
 }
 
-let outputProgramElm = document.querySelector(".outputProgram")
+let outputElm = document.querySelector(".output")
 
 function calculateAge() {
     let age = (currentYear - Number(yearBirth))
-    outputProgramElm.innerHTML = "Your name is: " + firstName.toUpperCase() + " " + surname.toUpperCase() +
-        ". Your age is: " + age + "."
+    outputElm.innerHTML = `
+        <p>Your name is: ${firstName.toUpperCase()} ${surname.toUpperCase()}</p>
+        <p>Your age is: ${age}</p>
+    `
 }
 
 calculateAge()
@@ -45,7 +47,7 @@ while (!color.match(/^(#[a-f0-9]{6}|black|green|silver|gray|olive|white|yellow|m
 }
 
 function changeColor() {
-    outputProgramElm.style.backgroundColor = color
+    outputElm.style.backgroundColor = color
 }
 
 changeColor()
