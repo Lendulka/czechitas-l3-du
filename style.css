@@ -29,8 +29,3 @@ h1 {
 	display: inline-block;
 	margin-top: 1.5rem;
 }
-
-.outputProgram {
-	display: flex;
-	flex-wrap: wrap;
-}
